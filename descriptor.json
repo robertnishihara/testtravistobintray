@@ -1,0 +1,16 @@
+{
+    "package": {
+        "name": "testray",
+        "repo": "testtravistobintray",
+        "subject": "robertnishihara"
+    },
+    "version": {
+        "name": "0.2.1.dev1"
+    },
+    "files": [
+        {
+            "includePattern": "ray/.whl/*",
+        }
+    ],
+    "publish": true
+}

@@ -1,0 +1,20 @@
+sudo: required
+
+language: generic
+
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+      env: BUILD=1
+      install:
+        - mkdir .whl
+        - python setup.py bdist_wheel
+        - mv dist/*.whl ../.whl/
+
+deploy:
+  provider: bintray
+  file: "descriptor.json"
+  user: robertnishihara
+  key:
+    secure:
