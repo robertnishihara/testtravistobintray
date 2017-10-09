@@ -19,6 +19,7 @@ matrix:
         region: us-west-2
         skip_cleanup: true
         local_dir: .whl
+        upload-dir: $TRAVIS_COMMIT
 
     - os: linux
       dist: trusty
@@ -35,3 +36,4 @@ matrix:
         region: us-west-2
         skip_cleanup: true
         local_dir: .whl
+        upload-dir: $TRAVIS_COMMIT
