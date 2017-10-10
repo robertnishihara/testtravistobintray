@@ -6,6 +6,7 @@ matrix:
   include:
     - os: linux
       dist: trusty
+      env: UPLOAD_TO_S3=1
       install:
         - mkdir .whl
         - echo "AAAAAA" >> .whl/file1.txt
@@ -29,3 +30,6 @@ deploy:
   upload-dir: $TRAVIS_COMMIT
   only:
     - master
+  on:
+    repo: robertnishihara/testtravistobintray
+    condition: $UPLOAD_TO_S3 = 1
