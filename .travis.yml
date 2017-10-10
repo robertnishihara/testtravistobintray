@@ -10,32 +10,21 @@ matrix:
         - mkdir .whl
         - echo "AAAAAA" >> .whl/file1.txt
         - echo "BBBBBB" >> .whl/file2.txt
-      deploy:
-        provider: s3
-        access_key_id: AKIAJ2L7XDUSZVTXI5QA
-        secret_access_key:
-          secure: YR/bHwYAuQOMafjQuOyUxsdzpq41l8xGRLcCnd26H9GdtZRWbwvE2LGOHlilE8p8MDRCOWYPywWV7/yZy2zjg+lc75kxNpaeSgg0GQKbYfmWl0f6cJt6wcla2zkBwxaITtqjL49j3ExcmJiOG2MBzNZn3Gp86C687jnnRv7MimJwj6dTBFx+swijbKOxKlPzdl4Q6lJVTIGK6tql0XNxQelYn34v9NH6uRteV7ImCyKX5/vVC1cOOWX88wjt+JVh+WJOPrna1MJ7z8DMajx8+71HGOedN3k4l7FmZwkC/PAf9HjhwLgq+SvGn9N+KunEhxs819uzc8ksKAxQ1zjJ4+jopiIujRWAaXvQuqG9yWhA42AaNxJ3SzQG6gkXJRflY/FbszhOh8k4No4Jt/fbKPfi9T5Fc9yU93ARomNsGitdwAWQ5odJ/qAIBsiIB66ymGAdPrjSLKd1SYLixrWBJxWs1SGbpRVytW1ZXsBWe91JDC01DQdlCX0ieE4shu4q1l4W9EN1MCmGv68gXhZMw1QAgdVynCYEAEAeyIyx/Q7NhNds6zsmmr9dWTxSsPB/m61/8rIbGpe69g6UGEbw0mQT9WpxyGG04yYmbPIjXqqWoK/WNDKTXzCgEPRDCToJo/cvEUI+ryjq+Gkfjx/t0Znxvfhr/sYB5Hfl5BSRHOs=
-        bucket: ray-wheels
-        region: us-west-2
-        skip_cleanup: true
-        local_dir: .whl
-        upload-dir: $TRAVIS_COMMIT
-        only:
-          - master
 
     - os: linux
       dist: trusty
       install:
-        - mkdir .whl
-        - echo "CCCCCC" >> .whl/file3.txt
-        - echo "DDDDDD" >> .whl/file4.txt
-      deploy:
-        provider: s3
-        access_key_id: AKIAJ2L7XDUSZVTXI5QA
-        secret_access_key:
-          secure: YR/bHwYAuQOMafjQuOyUxsdzpq41l8xGRLcCnd26H9GdtZRWbwvE2LGOHlilE8p8MDRCOWYPywWV7/yZy2zjg+lc75kxNpaeSgg0GQKbYfmWl0f6cJt6wcla2zkBwxaITtqjL49j3ExcmJiOG2MBzNZn3Gp86C687jnnRv7MimJwj6dTBFx+swijbKOxKlPzdl4Q6lJVTIGK6tql0XNxQelYn34v9NH6uRteV7ImCyKX5/vVC1cOOWX88wjt+JVh+WJOPrna1MJ7z8DMajx8+71HGOedN3k4l7FmZwkC/PAf9HjhwLgq+SvGn9N+KunEhxs819uzc8ksKAxQ1zjJ4+jopiIujRWAaXvQuqG9yWhA42AaNxJ3SzQG6gkXJRflY/FbszhOh8k4No4Jt/fbKPfi9T5Fc9yU93ARomNsGitdwAWQ5odJ/qAIBsiIB66ymGAdPrjSLKd1SYLixrWBJxWs1SGbpRVytW1ZXsBWe91JDC01DQdlCX0ieE4shu4q1l4W9EN1MCmGv68gXhZMw1QAgdVynCYEAEAeyIyx/Q7NhNds6zsmmr9dWTxSsPB/m61/8rIbGpe69g6UGEbw0mQT9WpxyGG04yYmbPIjXqqWoK/WNDKTXzCgEPRDCToJo/cvEUI+ryjq+Gkfjx/t0Znxvfhr/sYB5Hfl5BSRHOs=
-        bucket: ray-wheels
-        region: us-west-2
-        skip_cleanup: true
-        local_dir: .whl
-        upload-dir: $TRAVIS_COMMIT
+        - echo "HIHIHIHIHI"
+
+deploy:
+  provider: s3
+  access_key_id: AKIAJ2L7XDUSZVTXI5QA
+  secret_access_key:
+    secure: YR/bHwYAuQOMafjQuOyUxsdzpq41l8xGRLcCnd26H9GdtZRWbwvE2LGOHlilE8p8MDRCOWYPywWV7/yZy2zjg+lc75kxNpaeSgg0GQKbYfmWl0f6cJt6wcla2zkBwxaITtqjL49j3ExcmJiOG2MBzNZn3Gp86C687jnnRv7MimJwj6dTBFx+swijbKOxKlPzdl4Q6lJVTIGK6tql0XNxQelYn34v9NH6uRteV7ImCyKX5/vVC1cOOWX88wjt+JVh+WJOPrna1MJ7z8DMajx8+71HGOedN3k4l7FmZwkC/PAf9HjhwLgq+SvGn9N+KunEhxs819uzc8ksKAxQ1zjJ4+jopiIujRWAaXvQuqG9yWhA42AaNxJ3SzQG6gkXJRflY/FbszhOh8k4No4Jt/fbKPfi9T5Fc9yU93ARomNsGitdwAWQ5odJ/qAIBsiIB66ymGAdPrjSLKd1SYLixrWBJxWs1SGbpRVytW1ZXsBWe91JDC01DQdlCX0ieE4shu4q1l4W9EN1MCmGv68gXhZMw1QAgdVynCYEAEAeyIyx/Q7NhNds6zsmmr9dWTxSsPB/m61/8rIbGpe69g6UGEbw0mQT9WpxyGG04yYmbPIjXqqWoK/WNDKTXzCgEPRDCToJo/cvEUI+ryjq+Gkfjx/t0Znxvfhr/sYB5Hfl5BSRHOs=
+  bucket: ray-wheels
+  region: us-west-2
+  skip_cleanup: true
+  local_dir: .whl
+  upload-dir: $TRAVIS_COMMIT
+  only:
+    - master
