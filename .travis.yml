@@ -20,6 +20,8 @@ matrix:
         skip_cleanup: true
         local_dir: .whl
         upload-dir: $TRAVIS_COMMIT
+        only:
+          - master
 
     - os: linux
       dist: trusty
