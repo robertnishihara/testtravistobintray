@@ -23,7 +23,7 @@ matrix:
     - os: linux
       dist: trusty
       install:
-        - echo "HIHIHIHIHI"
+        - echo "HIHIHIHIHIHI"
 
 deploy:
   provider: s3
