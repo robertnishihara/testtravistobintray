@@ -14,6 +14,14 @@ matrix:
 
     - os: linux
       dist: trusty
+      env: DEFINITELY_UPLOAD_TO_S3=1
+      install:
+        - mkdir .whl
+        - echo "AAAAAA" >> .whl/file3.txt
+        - echo "BBBBBB" >> .whl/file4.txt
+
+    - os: linux
+      dist: trusty
       install:
         - echo "HIHIHIHIHI"
 
@@ -32,4 +40,4 @@ deploy:
     - master
   on:
     repo: robertnishihara/testtravistobintray
-    condition: $UPLOAD_TO_S3 = 1
+    condition: $UPLOAD_TO_S3 = 1 || $DEFINITELY_UPLOAD_TO_S3 = 1
