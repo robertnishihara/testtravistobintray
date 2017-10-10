@@ -28,3 +28,4 @@ deploy:
   upload-dir: $TRAVIS_COMMIT
   only:
     - master
+    
